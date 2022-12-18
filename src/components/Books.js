@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import BookList from "./BookList";
-
 import CreateBookForm from "./CreateBookForm";
 
 const Books = () => {
@@ -16,9 +15,16 @@ const Books = () => {
     setNumberOfBooks(updatedNumberOfBooks);
   };
 
+  const deleteBookById = (bookId) => {
+    const updatedNumberOfBooks = numberOfBooks.filter(
+      (book) => bookId !== book.id
+    );
+    setNumberOfBooks(updatedNumberOfBooks);
+  };
+
   return (
     <div>
-      <BookList numberOfBooks={numberOfBooks} />
+      <BookList deleteBookById={deleteBookById} numberOfBooks={numberOfBooks} />
       <CreateBookForm createBook={createBook} />
     </div>
   );
