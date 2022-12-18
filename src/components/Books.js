@@ -22,9 +22,22 @@ const Books = () => {
     setNumberOfBooks(updatedNumberOfBooks);
   };
 
+  const editBookById = (bookId, changedTitle) => {
+    const updatedNumberOfBooks = [...numberOfBooks];
+    updatedNumberOfBooks.forEach((book) => {
+      if (book.id === bookId) {
+        book.title = changedTitle;
+      }
+    });
+  };
+
   return (
     <div>
-      <BookList deleteBookById={deleteBookById} numberOfBooks={numberOfBooks} />
+      <BookList
+        editBookById={editBookById}
+        deleteBookById={deleteBookById}
+        numberOfBooks={numberOfBooks}
+      />
       <CreateBookForm createBook={createBook} />
     </div>
   );
