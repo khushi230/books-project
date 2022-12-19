@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+import { BooksContext } from "../context/contextBooks";
 
 import "../styles/index.css";
 
-const BookItem = ({ book, deleteBookById, editBookById }) => {
+const BookItem = ({ book }) => {
+  const { deleteBookById, editBookById } = useContext(BooksContext);
+
   const [showEditForm, setShowEditForm] = useState(false);
   const [changedTitle, setChangedTitle] = useState(book.title);
 

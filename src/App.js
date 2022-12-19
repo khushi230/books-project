@@ -1,12 +1,13 @@
 import React from "react";
+import { Provider } from "./context/contextBooks";
 
 import Books from "./components/Books";
 
 const App = () => {
   return (
-    <div>
+    <Provider>
       <Books />
-    </div>
+    </Provider>
   );
 };
 
