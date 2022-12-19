@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+import { BooksContext } from "../context/contextBooks";
 
 import "../styles/index.css";
 
-const CreateBookForm = ({ createBook }) => {
+const CreateBookForm = () => {
+  const { createBook } = useContext(BooksContext);
+
   const [title, setTitle] = useState("");
 
   const handleChange = (event) => {
