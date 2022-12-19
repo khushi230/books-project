@@ -29,7 +29,7 @@ const CreateBookForm = () => {
           onChange={handleChange}
           type="text"
         />
-        <button type="submit" className="button">
+        <button disabled={!title} type="submit" className="button">
           Create
         </button>
       </form>
